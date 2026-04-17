@@ -23,8 +23,8 @@ load_dotenv()
 
 
 # --- CONFIG & INITIALIZATION ---
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY") # Use Service Role for DB writes
+SUPABASE_URL = os.environ.get("SUPABASE_URL")
+SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") # Use Service Role for DB writes
 
 
 
@@ -35,7 +35,7 @@ key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") # Ensure this matches your Ren
 print(f"DEBUG: URL found: {url is not None}")
 print(f"DEBUG: Key found: {key is not None}")
 if key:
-    print(f"DEBUG: Key starts with: {key[:10]}...")
+    print(f"DEBUG: Key starts with: {key}")
 
 # Initialize ONE strong client for the backend
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
