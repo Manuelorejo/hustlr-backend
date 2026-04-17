@@ -17,9 +17,25 @@ import re
 
 load_dotenv()
 
+
+
+
+
+
 # --- CONFIG & INITIALIZATION ---
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY") # Use Service Role for DB writes
+
+
+
+# Diagnostic prints (Render will show these in the logs)
+url = os.environ.get("SUPABASE_URL")
+key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") # Ensure this matches your Render name
+
+print(f"DEBUG: URL found: {url is not None}")
+print(f"DEBUG: Key found: {key is not None}")
+if key:
+    print(f"DEBUG: Key starts with: {key[:10]}...")
 
 # Initialize ONE strong client for the backend
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
