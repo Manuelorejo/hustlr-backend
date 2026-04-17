@@ -5,7 +5,7 @@ gunicorn==21.2.0
 python-multipart==0.0.6
 
 # HTTP Client for Async Scraping
-httpx==0.26.0
+httpx
 requests==2.31.0
 beautifulsoup4==4.12.2
 
