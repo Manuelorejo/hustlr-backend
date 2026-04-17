@@ -13,6 +13,7 @@ beautifulsoup4==4.12.2
 groq==0.4.2
 pypdf==4.0.1
 PyPDF2
+fpdf
 
 # Database & Environment
 supabase==2.3.7
