@@ -143,7 +143,7 @@ async def tailor_live_job(req: DirectTailorRequest):
         pdf.multi_cell(0, 5, txt=safe_text)
 
         # 4. Return as Base64
-        pdf_bytes = pdf.output() 
+        pdf_bytes = bytes(pdf.output())
         b64_pdf = base64.b64encode(pdf_bytes).decode('utf-8')
 
         return {
